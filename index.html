@@ -116,6 +116,7 @@
 
     // preloadImg(setImageSize);
     i = setInterval(function(){
+      console.log($('.bg-image').outerWidth());
       if($('.bg-image').outerWidth() > 300) {
         clearInterval(i);
         setImageSize();
