@@ -88,7 +88,8 @@
 
     }
     $.ajax({
-      'url': 'https://source.unsplash.com/random/2560x1600',
+      type: 'POST',
+      url: 'https://source.unsplash.com/random/2560x1600',
       contentType: "image/jpeg",
     }).done(function(data){
       $('body').addClass('image-loaded');
