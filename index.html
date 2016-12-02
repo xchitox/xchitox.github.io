@@ -38,6 +38,10 @@
       -ms-transform: translate(-50%, -50%);
     }
 
+    .bg-image {
+      visibility: hidden;
+    }
+
     .loading {
       display: block;
       color: white;
@@ -74,11 +78,13 @@
     }
 
     .image-loaded .loading,  .image-loaded .loading-img{ display: none; }
+
+    .image-loaded .bg-image, .image-loaded .content {display: block; visibility: visible;}
   </style>
 </head>
 <body>
   <div class="container">
-    <img class="bg-image" src="https://source.unsplash.com/nature/2560x1600" alt="" style="visibility: hidden"/>
+    <img class="bg-image" src="https://source.unsplash.com/nature/2560x1600" alt=""/>
     <img class="loading-img" src="images/loading.gif" alt="" />
 
     <span class="loading">
