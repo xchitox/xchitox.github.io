@@ -26,9 +26,9 @@
       width: auto;
       height: auto;
 
-      transform: translate(- 50%, -50%);
-      -webkit-transform: translate(- 50%, -50%);
-      -ms-transform: translate(- 50%, -50%);
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
     }
   </style>
 </head>
@@ -43,15 +43,15 @@
 
       if($('body').outerWidth() > $('body').outerHeight()) {
         if($bgImage.outerWidth() > $bgImage.outerHeight()) {
-          $('.bgImage').css('height', '100%');
+          $bgImage.css('height', '100%');
         } else {
-          $('.bgImage').css('width', '100%');
+          $bgImage.css('width', '100%');
         }
       } else {
         if($bgImage.outerWidth() > $bgImage.outerHeight()) {
-          $('.bgImage').css('width', '100%');
+          $bgImage.css('width', '100%');
         } else {
-          $('.bgImage').css('height', '100%');
+          $bgImage.css('height', '100%');
         }
       }
 
