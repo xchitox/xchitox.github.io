@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <style>
+    .frame {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: scroll;
+    }
+    .parallax-ele {
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      margin-left: -50px;
+      width: 100px;
+      height: 100px;
+      background: red;
+    }
+
+    .spacer {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 9000px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="frame">
+    <div class="spacer">
+
+    </div>
+    <div class="parallax-ele">
+
+    </div>
+  </div>
+  <script>
+  $('.frame').on('scroll', function() {
+    console.log('scrolling');
+    $('.parallax-ele').css({
+      'transform': 'translate(0, '+ $('.frame').scrollTop() * 1.1 +'px)'
+    });
+  });
+  </script>
+</body>
+</html>

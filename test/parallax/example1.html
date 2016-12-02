@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <style>
+    .parallax-ele {
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 50%;
+      margin-left: -50px;
+      width: 100px;
+      height: 100px;
+      background: red;
+    }
+
+    .spacer {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 9000px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="spacer">
+
+  </div>
+  <div class="parallax-ele">
+
+  </div>
+  <script>
+  $(window).on('scroll', function() {
+    console.log('scrolling');
+    $('.parallax-ele').css({
+      'transform': 'translate(0, '+ $(window).scrollTop() * 1.1 +'px)'
+    });
+  });
+  </script>
+</body>
+</html>
