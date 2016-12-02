@@ -99,8 +99,7 @@
       bgImg.className += " bg-image";
 
       $.when.apply($, promise).done(function() {
-        $('.container').prepend($(bgImg));
-        $('body').addClass('image-loaded')
+        $('body').addClass('image-loaded');
         callback();
       });
     }
@@ -114,7 +113,9 @@
       }, 10);
     });
 
-    preloadImg(setImageSize);
+    // preloadImg(setImageSize);
+
+    $('.bg-image').ready(setImageSize);
   </script>
 </body>
 </html>
