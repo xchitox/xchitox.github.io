@@ -97,6 +97,7 @@
       }
 
       bgImg.src = 'https://source.unsplash.com/random/2560x1600';
+      bgImg.className += " bg-image";
 
       $.when.apply($, promise).done(function() {
         $('.container').prepend($(bgImg));
