@@ -111,8 +111,6 @@
         return;
       }
 
-
-      $('body').addClass('image-loaded');
       var $bgImage = $('.bg-image');
 
       if($('body').outerWidth() > $('body').outerHeight()) {
@@ -160,8 +158,9 @@
     i = setInterval(function(){
       if($('.bg-image').outerWidth() > 300) {
         console.log('image loaded');
+        $('body').addClass('image-loaded');
         setImageSize();
-        clearInterval(i);        
+        clearInterval(i);
       }
     }, 10);
   </script>
