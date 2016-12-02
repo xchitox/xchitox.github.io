@@ -11,11 +11,16 @@
       height: 100%;
       margin: 0px;
       padding: 0px;
+      overflow: hidden;
+      background: black;
     }
 
     .container {
+      width: 100%;
+      height: 100%;
       background-position: center center;
       background-size: cover;
+      overflow: hidden;
     }
 
     .bg-image {
@@ -34,7 +39,7 @@
 </head>
 <body>
   <div class="container">
-    <img class="bg-image" src="https://source.unsplash.com/random/2560x1600)" alt="" />
+    <img class="bg-image" src="images/loading.gif" alt="" />
   </div>
 
   <script>
@@ -58,7 +63,10 @@
     }
     $.ajax({
       'url': 'https://source.unsplash.com/random/2560x1600'
-    }).done(setImageSize);
+    }).done(function(data){
+      console.log(data);
+      setImageSize()
+    );
 
     var t= null;
     $(window).resize(function(){
