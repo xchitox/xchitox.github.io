@@ -104,7 +104,8 @@
       });
     }
 
-    var t= null;
+    var t= null,
+        i = null;
     $(window).resize(function(){
       clearTimeout(t);
 
@@ -114,8 +115,13 @@
     });
 
     // preloadImg(setImageSize);
-
-    $('.bg-image').ready(setImageSize);
+    i = setInterval(function(){
+      if($('.bg-image')[0].complete) {
+        clearInterval(i);
+        setImageSize();
+      }
+    })
+    // $('.bg-image').ready(setImageSize);
   </script>
 </body>
 </html>
