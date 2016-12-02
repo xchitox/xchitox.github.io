@@ -111,20 +111,18 @@
         return;
       }
 
-      var $bgImage = $('.bg-image');
+      var $bgImage = $('.bg-image'),
+          wR = $('body').outerWidth() / $bgImage.outerWidth(),
+          hR = $('body').outerHeight() / $bgImage.outerHeight();
 
-      if($('body').outerWidth() > $('body').outerHeight()) {
-        if($bgImage.outerWidth() > $bgImage.outerHeight()) {
-          $bgImage.css('height', '100%');
-        } else {
-          $bgImage.css('width', '100%');
-        }
-      } else {
-        if($bgImage.outerWidth() > $bgImage.outerHeight()) {
-          $bgImage.css('width', '100%');
-        } else {
-          $bgImage.css('height', '100%');
-        }
+      if($bgImage.outerHeight() * wR >= $('body').outerHeight()) {
+        $bgImg.css('width', '100%');
+        return;
+      }
+
+      if($bgImage.outerWidth() * hR >= $('body').outerWidth()) {
+        $bgImg.css('height', '100%');
+        return;
       }
     }
 
