@@ -53,8 +53,6 @@
       -webkit-transform: translate(-50%, -150px);
       -ms-transform: translate(-50%, -150px);
     }
-
-    /*.image-loaded .loading { display: none;}*/
   </style>
 </head>
 <body>
@@ -89,6 +87,23 @@
       }
     }
 
+    var preloadImg = function(callback) {
+      var promise = $.Deferred(),
+          bgImg = new Image();
+
+      bgImg.onlond = function() {
+        promise.resolve();
+      }
+
+      bgImg.src = 'https://source.unsplash.com/random/2560x1600';
+      bgImg.className += " bg-image";
+
+      $.when.apply($, promise).done(function() {
+        $('.container').prepend($(bgImg));
+        $('body').addClass('image-loaded')
+        callback();
+      });
+    }
 
     var t= null;
     $(window).resize(function(){
@@ -99,7 +114,7 @@
       }, 10);
     });
 
-    $('.bg-image').load(setImageSize);
+    preloadImg(setImageSize);
   </script>
 </body>
 </html>
