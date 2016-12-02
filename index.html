@@ -4,6 +4,7 @@
   <title>..::Chito's GitHub Page::..</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <style>
     html, body {
       width: 100%;
@@ -16,11 +17,57 @@
       background-position: center center;
       background-size: cover;
     }
+
+    .bg-image {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: auto;
+      height: auto;
+
+      transform: translate(- 50%, -50%);
+      -webkit-transform: translate(- 50%, -50%);
+      -ms-transform: translate(- 50%, -50%);
+    }
   </style>
 </head>
 <body>
-  <div class="container" style="background-image: url(https://source.unsplash.com/random/2560x1600)">
-
+  <div class="container">
+    <img class="bg-image" src="https://source.unsplash.com/random/2560x1600)" alt="" />
   </div>
+
+  <script>
+    var setImageSize = function () {
+      var $bgImage = $('.bg-image');
+
+      if($('body').outerWidth() > $('body').outerHeight()) {
+        if($bgImage.outerWidth() > $bgImage.outerHeight()) {
+          $('.bgImage').css('height', '100%');
+        } else {
+          $('.bgImage').css('width', '100%');
+        }
+      } else {
+        if($bgImage.outerWidth() > $bgImage.outerHeight()) {
+          $('.bgImage').css('width', '100%');
+        } else {
+          $('.bgImage').css('height', '100%');
+        }
+      }
+
+    }
+    $.ajax({
+      'url': 'https://source.unsplash.com/random/2560x1600'
+    }).done(setImageSize);
+
+    var t= null;
+    $(window).resize(function(){
+      clearTimeout(t);
+
+      setTimeout(function(){
+        setImageSize();
+      }, 10);
+    });
+  </script>
 </body>
 </html>
