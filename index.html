@@ -49,18 +49,14 @@
       font-weight: bold;
       font-family: "Arial";
       position: absolute;
-      top: 50%;
-      left: 50%;
+      top: 5%;
+      left: 10%;
       text-align: center;
-
-      transform: translate(-50%, -150px);
-      -webkit-transform: translate(-50%, -150px);
-      -ms-transform: translate(-50%, -150px);
     }
 
     .content {
       display: none;
-      width: 80%;
+      width: 40%;
       color: white;
       padding: 2vw;
       font-size: 2.34375vw;
@@ -70,11 +66,8 @@
       font-family: "Arial";
 
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -150px);
-      -webkit-transform: translate(-50%, -150px);
-      -ms-transform: translate(-50%, -150px);
+      top: 10%;
+      left: 10%;
     }
 
     .acknowledge {
@@ -116,31 +109,14 @@
           hR = $('body').outerHeight() / $bgImage.outerHeight();
 
       if($bgImage.outerHeight() * wR >= $('body').outerHeight()) {
-        $bgImg.css('width', '100%');
+        $bgImage.css('width', '100%');
         return;
       }
 
       if($bgImage.outerWidth() * hR >= $('body').outerWidth()) {
-        $bgImg.css('height', '100%');
+        $bgImage.css('height', '100%');
         return;
       }
-    }
-
-    var preloadImg = function(callback) {
-      var promise = $.Deferred(),
-          bgImg = new Image();
-
-      bgImg.onlond = function() {
-        promise.resolve();
-      }
-
-      bgImg.src = 'https://source.unsplash.com/random/2560x1600';
-      bgImg.className += " bg-image";
-
-      $.when.apply($, promise).done(function() {
-        $('body').addClass('image-loaded');
-        callback();
-      });
     }
 
     var t= null,
