@@ -59,6 +59,7 @@
 </head>
 <body>
   <div class="container">
+    <img class="bg-image" src="https://source.unsplash.com/nature/2560x1600" alt="" style="display: none"/>
     <img class="loading-img" src="images/loading.gif" alt="" />
 
     <span class="loading">
@@ -88,32 +89,6 @@
       }
     }
 
-    var preloadImg = function(callback) {
-      var promise = $.Deferred(),
-          bgImg = new Image();
-
-      bgImg.onlond = function() {
-        promise.resolve();
-      }
-
-      bgImg.src = 'https://source.unsplash.com/random/2560x1600';
-      bgImg.className += " bg-image";
-
-      $.when.apply($, promise).done(function() {
-        $('.container').prepend($(bgImg));
-        $('body').addClass('image-loaded')
-        callback();
-      });
-    }
-
-
-    /*$.ajax({
-      url: 'https://source.unsplash.com/random/2560x1600'
-    }).done(function(data){
-      $('body').addClass('image-loaded');
-      $('.bg-image').attr('src', 'data:image/jpg;base64, '+data);
-      setImageSize();
-    });*/
 
     var t= null;
     $(window).resize(function(){
@@ -124,7 +99,7 @@
       }, 10);
     });
 
-    preloadImg(setImageSize);
+    $('.bg-image').load(setImageSize);
   </script>
 </body>
 </html>
