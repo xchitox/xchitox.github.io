@@ -57,7 +57,7 @@
 </head>
 <body>
   <div class="container">
-    <img class="bg-image" src="https://source.unsplash.com/nature/2560x1600" alt="" style="display: none"/>
+    <img class="bg-image" src="https://source.unsplash.com/nature/2560x1600" alt="" style="visibility: hidden"/>
     <img class="loading-img" src="images/loading.gif" alt="" />
 
     <span class="loading">
@@ -116,7 +116,7 @@
 
     // preloadImg(setImageSize);
     i = setInterval(function(){
-      if($('.bg-image')[0].complete) {
+      if($('.bg-image').outerWidth() > 300) {
         clearInterval(i);
         setImageSize();
       }
