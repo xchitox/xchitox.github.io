@@ -53,6 +53,27 @@
       -webkit-transform: translate(-50%, -150px);
       -ms-transform: translate(-50%, -150px);
     }
+
+    .content {
+      display: none;
+      width: 33%;
+      color: white;
+      padding: 2vw;
+      font-size: 2.34375vw;
+      line-height: 4.6875vw;
+      font-weight: bold;
+      background: rgba(0,0,0,0.7);
+    }
+
+    .acknowledge {
+      display: block;
+      font-size: 0.5em;
+      line-height: 1em;
+      font-weight: normal;
+      font-style: italic;
+    }
+
+    .image-loaded .loading,  .image-loaded .loading-img{ display: none; }
   </style>
 </head>
 <body>
@@ -62,6 +83,11 @@
 
     <span class="loading">
       Loading...
+    </span>
+
+    <span class="content">
+      The true object of all human life is play. Earth is a task garden; heaven is a playground.
+      <span class="acknowledge">-- Gilbert K. Chesterton</span>
     </span>
   </div>
 
@@ -114,15 +140,12 @@
       }, 10);
     });
 
-    // preloadImg(setImageSize);
     i = setInterval(function(){
-      console.log($('.bg-image').outerWidth());
       if($('.bg-image').outerWidth() > 300) {
         clearInterval(i);
         setImageSize();
       }
     }, 10);
-    // $('.bg-image').ready(setImageSize);
   </script>
 </body>
 </html>
