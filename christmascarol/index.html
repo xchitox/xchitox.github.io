@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Christmas Carol 2016</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script src="js/vendors/jquery-3.1.1.min.js" type="text/javascript"></script>
+</head>
+<body>
+  <div id="core-container">
+    <section id="page-game">
+      <div id="money-bg"></div>
+      <div id="tree"></div>
+
+      <dis id="counter">30.00</dis>
+
+      <div id="amount">
+        <span class="dollar">$</span>
+        <span class="figure">0</span>
+      </div>
+
+      <div id="get-ready">
+        <span class="text">Get ready</span>
+        <span class="count">3</span>
+      </div>
+
+      <div id="press-enter">
+        <div class="text">
+          Press Any Key to Start
+        </div>
+      </div>
+    </section>
+
+    <section id="page-game-over">
+      <div class="wrapper">
+        <div class="title">
+          Game Over
+        </div>
+        <div class="you-won">
+          You have won
+        </div>
+        <div class="won">
+          $<span class="figure">0</span>
+        </div>
+
+        <div class="bonus-wrapper">
+          <span class="and">&amp;</span>
+          <span class="bonus">$<span class="b-figure">0</span> BONUS!!!</span>
+        </div>
+
+        <span class="total">$<span class="t-figure">0</span></span>
+      </div>
+    </section>
+
+    <section id="page-landing">
+      <span class="text-1">Christmas</span>
+      <span class="text-2">Carol</span>
+      <img id="carol" src="images/carolpng.png" alt="" />
+      
+      <a id="go-btn">&lt;Enter Any Key&gt;</a>
+    </section>
+    <section id="page-init">
+        <span class="text">Please press any key&gt;<span class="blank"> _</span></span>
+    </section>
+
+    <section id="page-firework">
+      <canvas id="sky" width="640" height="480"></canvas>
+    </section>
+  </div>
+
+  <script src="js/vendors/howler.min.js" type="text/javascript"></script>
+  <script src="js/firework.js" type="text/javascript"></script>
+  <script src="js/script.js" type="text/javascript"></script>
+</body>
+</html>
